@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Create</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #0A66C2;
+      outline: none;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #0A66C2;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #084b8a;
+    }
+
+    input[type="submit"]:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+    }
+
+    .hint {
+      font-size: 0.9em;
+      color: #888;
+      margin-top: -10px;
+      margin-bottom: 10px;
+    }
+    #go-to-sign-up{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <form action="/create_finish" method="POST">
+    <h1>新增pad</h1>
+    <label for="title">標題</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="description">敘述</label>
+    <input type="text" id="description" name="description" required>
+
+    <div class="checkbox-group">
+      <label for="public">公開 (yes/no)</label>
+    </div>
+    <div class="hint">公開狀態請在下方框中填寫 "yes" 或 "no"</div>
+    <input type="text" id="public-status" name="public" required>
+
+    <label for="username">username (登入)</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="psw">密碼 (登入)</label>
+    <input type="password" id="psw" name="psw" required>
+    <div id="go-to-sign-up">
+      <a href="/signup">沒有帳號嗎?註冊一個!</a>
+    </div>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostIt</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    .navbar a.active {
+      background-color: #007BFF;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar a {
+        width: 100%;
+        text-align: left;
+      }
+    }
+    .post-card {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding-top: 0px;
+    }
+    #big-title{
+      font-size: 40px;
+      font-family: monospace;
+    }
+    #new-post{
+      font-size: 23px;
+    }
+    #in{
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 0px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 導覽列 -->
+  <div class="navbar">
+    <a href="/" class="active">主頁</a>
+    <a href="/publicpads">公開posts</a>
+    <a href="/create">新增post</a>
+    <a href="">關於</a>
+    <a href="/signup">註冊</a>
+  </div>
+  <!-- 內容 -->
+  <div id="in">
+    <h1 id="big-title" style="text-align: center;">PostIt</h1>
+    <h2>PostIt：你的數位便利貼牆</h2>
+    <p><br>還在為雜亂的筆記和想法煩惱嗎？PostIt 就是你的最佳解決方案！
+      <br>PostIt 讓你隨時隨地記錄下任何想法。
+      <br>為什麼選擇 PostIt？
+      <br>快速貼文： 就像在便利貼上寫下你的靈感，PostIt 讓你隨時隨地記錄下任何想法。
+      <br>多樣化內容： 不只文字，你還可以貼上圖片、影片，讓你的貼文更生動。
+      <br>自由佈置： 就像在牆上貼便利貼一樣，你可以自由地調整貼文的位置和大小。
+      <br>方便分享： 將你的貼文分享給朋友，一起討論、一起成長。
+      <br>簡單易用： 介面直觀，操作簡單，讓你快速上手。
+      <br>多樣主題： 不論是學習、工作、還是生活，PostIt都能滿足你的需求。
+      <br>安全可靠： 你的資料受到保護，你可以安心分享。
+      <br>排版整齊： 使用標籤、分類，讓你的貼文井然有序。
+      <br>跨裝置： 不論你用電腦、手機，都能隨時訪問你的貼文。
+      <br>貼文、分享，一鍵搞定
+      <br>立即加入 PostIt，打造屬於你的創意世界！
+    </p>
+    <h2>功能</h2>
+    <p>PostIt：你的數位便利貼牆！
+      <br><br>
+      想像一下，擁有一面可以隨意貼滿想法的牆，是不是很酷？PostIt 就是你的數位便利貼牆！
+      <br><br>
+      隨心所欲貼文：
+      <br><br>
+      <br>文字、圖片、影片通通貼！ 想分享一段文字、一張照片，還是錄一段影片？PostIt 都能滿足你。
+      <br>多種版型選擇： 不想只用單純的文字？我們提供多種版型，讓你的貼文更豐富多彩。
+      <br>輕鬆編輯： 想修改貼文內容？隨時都能編輯，方便又快速。
+      <br>互動交流無極限：
+      <br><br>
+      <br>留言互動： 對別人的貼文有想法？留言分享你的觀點吧！
+      <br>追蹤好友： 追蹤你喜歡的朋友，不錯過任何精彩貼文。
+      <br>建立社群： 和志同道合的朋友一起討論、交流。
+      <br>組織你的想法：
+      <br><br>
+      <br>建立主題： 將相關的貼文歸類到不同的主題，方便管理。
+      <br>標籤功能： 為貼文添加標籤，快速找到想要的內容。
+      <br>搜尋功能： 想要找回之前的貼文？搜尋功能幫你快速找到。
+      <br>更多功能等你來探索：
+      <br><br>
+      <br>個人化設定： 自訂你的個人頁面，展現你的獨特風格。
+      <br>通知提醒： 不錯過任何留言和回覆。
+      <br>跨平台同步： 在電腦、手機上都能使用 PostIt。
+      <br>PostIt，不只是貼文，更是分享、交流、成長的平台。 快來加入我們，一起打造一個充滿創意的世界！</p>
+    <h2><p id="new-post">最新公開的post</p></h2>
+    <!--<div class="post-card">
+        <h2>標題</h2>
+        <p>敘述</p>
+        <a href="">aa</a>
+    </div>
+    <div class="post-card">
+        <p></p>
+    </div>--->
+    <out/><!--不要刪掉-->
+    <h2>PostIt：想貼就貼！</h2>
+    <p><br>無論你是想分享生活點滴、工作心得，還是只是想隨手塗鴉，
+      <br>PostIt 都能滿足你的需求。我們提供多種功能，讓你輕鬆編輯、分享你的貼文。
+      <br>快來加入我們，一起體驗貼文的樂趣吧！</p>
+      <a href="/signup">去註冊一個帳號</a>
+  </div>
+</body>
+</html>
