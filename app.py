@@ -1,7 +1,8 @@
 from flask import Flask
 from flask import request
 from flask import redirect
-#import hashlib
+
+# import hashlib
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ def home():
         lines = [line.rstrip() for line in lines]
     title = lines[-2]
     description = lines[-1]
-    opt += f"<div class='post-card'> <h2>{title}</h2> <p>{description}</p> <a href='http://127.0.0.1:5000/pad/{title}'>前往</a> </div>"
+    opt += f"<div class='post-card'> <h2>{title}</h2> <p>{description}</p> <a href='https://postit-fork.onrender.com/pad/{title}'>前往</a> </div>"
     return html.replace("<out/>", opt)
 
 
@@ -90,7 +91,7 @@ def create_finish():
                 html = f.read()
             return html.replace("<out/>", "請正確輸入是否公開(yes/no)")
         # 登入暫不做
-        return redirect(f"http://127.0.0.1:5000/pad/{title}")  # 到時候改成真正網址
+        return redirect(f"https://postit-fork.onrender.com/pad/{title}")  # 到時候改成真正網址
 
 
 @app.route("/publicpads")
@@ -106,7 +107,7 @@ def publicpads():
         else:
             title = lines[i]
             description = lines[i + 1]
-            opt += f"<div class='post-card'> <h2>{title}</h2> <p>{description}</p> <a href='http://127.0.0.1:5000/pad/{title}'>前往</a> </div>"
+            opt += f"<div class='post-card'> <h2>{title}</h2> <p>{description}</p> <a href='https://postit-fork.onrender.com/pad/{title}'>前往</a> </div>"
     with open("publicpads.html", "r", encoding="utf-8") as f:
         html = f.read()
     return html.replace("<out/>", opt)
